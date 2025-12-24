@@ -128,7 +128,7 @@ jobs:
             ;;
           Next)
             case "$TARGET" in 
-              android12-5.10) COMMIT="6796d4799aa943ef7cdeccda95e14302b4cd734c" ;;
+              android12-5.10) COMMIT="ba9596176b0c23c433220fd3373bfbcda5e83147" ;;
             esac
             git checkout "$COMMIT"
             ;;
@@ -266,7 +266,7 @@ jobs:
 
         # Apply core SUSFS patches
         cd "$KERNEL_ROOT/common"
-        cp "$SUSFS4KSU"/kernel_patches/50_add_susfs_in_gki-${{ inputs.android_version }}-${{ inputs.kernel_version }}.patch ./
+        cp "$SUSFS4KSU/kernel_patches/50_add_susfs_in_gki-${{ inputs.android_version }}-${{ inputs.kernel_version }}.patch" ./
         patch -p1 < 50_add_susfs_in_gki-${{ inputs.android_version }}-${{ inputs.kernel_version }}.patch 
         #|| true
 
